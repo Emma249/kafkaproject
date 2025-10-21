@@ -29,7 +29,7 @@ kafkaproject/
 1. Ensure Terraform v1.9+ and Azure CLI are installed and authenticated (`az login`).
 2. Update `terraform/variables.tf` with your values (resource names, SSH public key path, location).
 3. Run: `terraform init && terraform plan -out=tfplan && terraform apply tfplan`
-4. After VMs are created, SSH into the VMs and run bootstrap scripts in `/home/azureuser/scripts/`.
+4. After VMs are created, SSH into the VMs and run bootstrap scripts in `/home/user/scripts/`.
    - Zookeeper VM: `sudo bash kafka-bootstrap.sh zookeeper`
    - Broker VMs: `sudo bash kafka-bootstrap.sh broker`
    - Monitoring VM: `sudo bash install-prometheus.sh` and `sudo bash install-grafana.sh`
@@ -41,4 +41,4 @@ kafkaproject/
 - Monitoring: ensure Prometheus targets include broker JMX exporter endpoints and that Grafana datasource points to Prometheus.
 
 ## Notes
-- This repo is for demo / learning purposes. For production use, secure access, use managed disks, private networks, and follow corporate security policies.
+- this repo simulates event-driven production environments with secure access, managed disks, private networks.
