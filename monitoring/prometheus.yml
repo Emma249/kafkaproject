@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'kafka_jmx'
+    static_configs:
+      - targets: ['localhost:7071']  # Update to broker JMX exporter endpoints
+  - job_name: 'zookeeper'
+    static_configs:
+      - targets: ['localhost:2181']
